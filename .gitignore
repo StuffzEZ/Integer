@@ -1,0 +1,40 @@
+# Python environments and bytecode
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test, type-checker, and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Integer runtime data and local logs
+integer-data.json
+*.sqlite
+*.sqlite3
+*.db
+*.log
+*.tmp
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+
+# Cloudflare/local tunnel credentials
+.cloudflared/
+cert.pem
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local editor settings
+.vscode/
+.idea/
