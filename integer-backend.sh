@@ -9,6 +9,8 @@ PORT="${INTEGER_PORT:-8765}"
 install_backend() {
 	command -v python3 >/dev/null || { echo "python3 is required" >&2; exit 1; }
 	python3 -m venv "$VENV"
+	# Ensure pip is available (handles minimal LXC images)
+	"$VENV/bin/python" -m ensurepip --upgrade 2>/dev/null || true
 	"$VENV/bin/pip" install --upgrade pip aiohttp
 	if [[ -z "${INTEGER_ADMIN_PASSWORD:-}" ]]; then
 		export INTEGER_ADMIN_PASSWORD="$(python3 -c 'import secrets; print(secrets.token_urlsafe(18))')"
